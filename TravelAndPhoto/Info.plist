@@ -21,5 +21,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>For  put a picture to app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To get your location</string>
 </dict>
 </plist>

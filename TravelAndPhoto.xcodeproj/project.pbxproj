@@ -14,6 +14,7 @@
 		65CE4612275EB7E00039CC45 /* TravelAndPhoto.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65CE4610275EB7E00039CC45 /* TravelAndPhoto.xcdatamodeld */; };
 		65CE4614275EB7E10039CC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65CE4613275EB7E10039CC45 /* Assets.xcassets */; };
 		65CE4617275EB7E10039CC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CE4615275EB7E10039CC45 /* LaunchScreen.storyboard */; };
+		65F1A4C0275FA3A500E761FA /* PhotoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F1A4BF275FA3A500E761FA /* PhotoListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		65CE4613275EB7E10039CC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65CE4616275EB7E10039CC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65CE4618275EB7E10039CC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F1A4BF275FA3A500E761FA /* PhotoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				65CE4607275EB7E00039CC45 /* AppDelegate.swift */,
 				65CE4609275EB7E00039CC45 /* SceneDelegate.swift */,
 				65CE460B275EB7E00039CC45 /* ViewController.swift */,
+				65F1A4BF275FA3A500E761FA /* PhotoListVC.swift */,
 				65CE460D275EB7E00039CC45 /* Main.storyboard */,
 				65CE4613275EB7E10039CC45 /* Assets.xcassets */,
 				65CE4615275EB7E10039CC45 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				65CE460C275EB7E00039CC45 /* ViewController.swift in Sources */,
 				65CE4608275EB7E00039CC45 /* AppDelegate.swift in Sources */,
+				65F1A4C0275FA3A500E761FA /* PhotoListVC.swift in Sources */,
 				65CE4612275EB7E00039CC45 /* TravelAndPhoto.xcdatamodeld in Sources */,
 				65CE460A275EB7E00039CC45 /* SceneDelegate.swift in Sources */,
 			);
