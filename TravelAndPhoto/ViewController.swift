@@ -240,6 +240,63 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //            empty
         }
     }
+    
+//    pine tıklayımca ! ifadesi çıkması ve bu ifade sayesinede navigasyona bağlanması için
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        kullanıcın yerini pin ile gösteriliyorsa null yap gösterme, sadece tıklanılan yerin gösterilmesi gerekiyor
+        if annotation is MKUserLocation {
+            return nil
+        }
+//        Id nin ne olduğu hiç farketmez
+        let reuseID = "myAnnotation"
+        
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID) as? MKPinAnnotationView
+        
+//        if pineview cannot be created
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+//            balancukta bilgi gösterilen yer
+            pinView?.canShowCallout = true
+            pinView?.tintColor = UIColor.blue
+            
+//            detay gösterilen bir button oluşturuldu.
+            let button  = UIButton(type: UIButton.ButtonType.detailDisclosure)
+//            sohow the button on right side
+            pinView?.rightCalloutAccessoryView = button
+        } else {
+//            if pinview can be created before, add the given anatation
+//            pinview daha  önce  oluşturulduysa, verilen anatation ekler
+            pinView?.annotation = annotation
+        }
+        
+        return pinView
+    }
+    
+//    balondaki butona basıldığını anlayan fonksiyon
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if selectedTitle != "" {
+            let requestLocation = CLLocation(latitude: annotationLatitude, longitude: annotationLongitude)
+            
+//            placemark reverseGeocodeLocation ile alınıyor
+            CLGeocoder().reverseGeocodeLocation(requestLocation){ (placemarks, error) in
+//                closure
+                if let placemark = placemarks {
+                    if placemark.count > 0 {
+                        
+//                        mapItemı oluşturabilmek için placemar objesi gerekiyor
+                        let newPlacemark = MKPlacemark(placemark: placemark[0])
+//                        navigasyonun içinde Mapi açmak için MapItem gerekiyor
+                        let item = MKMapItem(placemark: newPlacemark)
+                        item.name = self.annotationTitle
+//                        selected Map mode such as with car
+                        let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+                        item.openInMaps(launchOptions: launchOptions)
+                    }
+                }
+                
+            }
+        }
+    }
 
 }
 
